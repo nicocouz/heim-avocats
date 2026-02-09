@@ -1166,6 +1166,10 @@ body {
         padding: 8rem 2rem 4rem;
     }
 
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
     .page-header {
         padding: 8rem 2rem 4rem;
     }
