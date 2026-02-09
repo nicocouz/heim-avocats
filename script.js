@@ -1,3 +1,9 @@
+// Force scroll to top on page load
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 // Mobile menu toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -40,22 +46,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar enhancement on scroll
-let lastScroll = 0;
+// Navbar scroll effect - add shadow only
 const nav = document.querySelector('.nav');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll > 150) {
-        nav.style.padding = '1rem 0';
-        nav.style.boxShadow = '0 4px 20px rgba(44, 44, 44, 0.08)';
+    if (currentScroll > 100) {
+        nav.style.boxShadow = '0 2px 10px rgba(44, 44, 44, 0.08)';
     } else {
-        nav.style.padding = '1.5rem 0';
         nav.style.boxShadow = 'none';
     }
-
-    lastScroll = currentScroll;
 });
 
 // Intersection Observer for scroll animations
